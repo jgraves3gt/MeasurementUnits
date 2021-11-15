@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>JGraves</Authors>
+    <Description>A .NET Standard library to convert values between common measurement units of Mass, Length, and Volume</Description>
+    <PackageProjectUrl>https://github.com/jgraves3gt/MeasurementUnits/tree/master</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jgraves3gt/MeasurementUnits/tree/master</RepositoryUrl>
+    <PackageTags>measurement-units</PackageTags>
   </PropertyGroup>
 
 </Project>

@@ -44,6 +44,13 @@ Console.Out.WriteLine($"3.875 kilometers converted to miles equals {_mi.Value}")
 | mi          | miles         |
 | fur         | furlongs      |
 
+Length Units can now be determined by providing GeoCoordinates (Latitude and Longitude).
+Simply provide the lat1, lon1, lat2, lon2, and desired result unit type and the distance will be returned as a `double`.
+```
+var distanceInFeet = LengthConverter.GetLengthFromGPSPoints(41.731363, -111.834969, 41.733271, -111.834902, LengthUnits.ft);
+```
+
+This example should return roughly 697 feet according to Google Maps.
 
 ### Mass Units
 
@@ -82,3 +89,14 @@ Console.Out.WriteLine($"3.875 kilometers converted to miles equals {_mi.Value}")
 | qt_imp     |       quarts (imperial) |
 | gal_us     |            gallons (US) |
 | gal_imp    |      gallons (imperial) |
+
+
+### Temperature Units
+
+| Class Name |               Unit Name |
+| :--------- | ----------------------: |
+| K          |                  Kelvin |
+| C          |                 Celcius |
+| F          |              Fahrenheit |
+
+Since temperatures don't convert the same way distances do (ie. temperatures aren't mere ratios of each other like distances are and 0 is not always 0 across the board), there isn't a `FromTempUnit()` method. Instead use the `ConvertFrom()` method that takes a start value and a start unit enum. Or use the `TempConverter.GetTempConverted` static method.

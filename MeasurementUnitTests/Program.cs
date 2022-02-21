@@ -2,6 +2,7 @@
 using MeasurementUnits.Units.Mass;
 using MeasurementUnits.Units.Length;
 using MeasurementUnits.Units.Volume;
+using MeasurementUnits.Units.Temp;
 
 namespace MeasurementUnitTests
 {
@@ -18,11 +19,15 @@ namespace MeasurementUnitTests
             Console.Out.WriteLine("Enter an amount of millimeters to test with.");
             double startValueLen = Convert.ToDouble(Console.In.ReadLine());
 
+            Console.Out.WriteLine("Enter a temperature to test with in Kelvin.");
+            double startValueTemp = Convert.ToDouble(Console.In.ReadLine());
+
 
 
             RunMassTests(startValueMass);
             RunVolumeTests(startValueVol);
             RunLengthTests(startValueLen);
+            RunTempTests(startValueTemp);
         }
 
 
@@ -203,7 +208,31 @@ namespace MeasurementUnitTests
             Console.Out.WriteLine($"| Mile (US): {_mi.Value}mi         |");
             Console.Out.WriteLine("----------------------------------");
             Console.Out.WriteLine($"| Furlong (Imp): {_fur.Value}fur         |");
-            
+            Console.Out.WriteLine("----------------------------------");
+            Console.Out.WriteLine($"| Coords: ({41.731363},{-111.834969}), ({41.733271},{-111.834902}) to feet       |");
+            Console.Out.WriteLine("----------------------------------");
+            Console.Out.WriteLine($"| Distance: ({LengthConverter.GetLengthFromGPSPoints(41.731363, -111.834969, 41.733271, -111.834902, LengthUnits.ft)}) feet       |");
+
+            Console.Out.WriteLine("==================================");
+        }
+
+        public static void RunTempTests(double value)
+        {
+            Console.Out.WriteLine("==================================");
+            Console.Out.WriteLine("| Starting Temp Tests...          |");
+
+            Console.Out.WriteLine("----------------------------------");
+            Console.Out.WriteLine($"| You Entered: {value}K         |");
+
+            var _c = C.ConvertFrom(TempUnits.K, value);
+            var _f = F.ConvertFrom(TempUnits.K, value);
+
+
+            Console.Out.WriteLine("==================================");
+            Console.Out.WriteLine($"| Celcius: {_c.Value}         |");
+            Console.Out.WriteLine("----------------------------------");
+            Console.Out.WriteLine($"| Fahrenheit : {_f.Value}         |");
+        
             Console.Out.WriteLine("==================================");
         }
     }

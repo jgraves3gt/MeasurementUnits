@@ -50,7 +50,6 @@ Simply provide the lat1, lon1, lat2, lon2, and desired result unit type and the 
 var distanceInFeet = LengthConverter.GetLengthFromGPSPoints(41.731363, -111.834969, 41.733271, -111.834902, LengthUnits.ft);
 ```
 
-This example should return roughly 697 feet according to Google Maps.
 
 ### Mass Units
 

@@ -4,7 +4,7 @@ A .net library to convert common units of measure including Mass, Volume and Len
 ***Please note that at this time there is no way to allow conversions between the measurement types (ie. Cannot convert a Mass Unit to Length)*** 
 
 ## Uses
-The following example converts 3.875 kilometers to miles by creating a kilometer object then calling the `FromLengthUnit()` method that is a part of each length unit class
+The following example converts 3.875 kilometers to miles by creating a mile object then calling the `FromLengthUnit()` method that is a part of each length unit class
 
 
 ```
